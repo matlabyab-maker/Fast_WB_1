@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Fast_WB_1</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="topbar" class="button-row">
+    <button id="back">Back</button><button id="forward">Forward</button><button id="send">Send</button><button id="file">File</button><button id="copyMW"><span>Copy</span><span>MW</span></button><button id="pcAndroid"><span>PC</span><span>Android</span></button><button id="past">Past</button>
+  </header>
+  <main id="browserArea">
+    <section id="home" class="home-page">
+      <h1>Fast_WB_1</h1><p class="subtitle">Home</p>
+      <div class="home-grid">
+        <section><h2>Websites with operator-specific free-access plans</h2><div class="link-grid">
+          <a href="https://www.jio.com">🇮🇳 Jio</a><a href="https://www.jiocinema.com">🇮🇳 JioCinema</a><a href="https://connectu.vodacom.co.za">🇿🇦 Vodacom ConnectU</a><a href="https://www.freebasics.com">🌐 Free Basics</a><a href="https://www.nhs.uk">🇬🇧 NHS</a><a href="https://www.t-mobile.com">🇺🇸 T-Mobile</a><a href="https://www.vivo.com.br">🇧🇷 Vivo</a>
+        </div></section>
+        <section><h2>Radio and music</h2><div class="link-grid">
+          <a href="https://www.jiosaavn.com">🇮🇳 JioSaavn</a><a href="https://www.iheart.com">🇺🇸 iHeartRadio</a><a href="https://www.telstra.com.au/entertainment/music">🇦🇺 Telstra Music</a><a href="https://connectu.vodacom.co.za">🇿🇦 ConnectU</a><a href="https://www.deezer.com">🇫🇷 Deezer</a><a href="https://wynk.in/music">🇮🇳 Wynk Music</a>
+        </div></section>
+      </div>
+      <p class="disclaimer">Free access depends on the mobile operator, country and plan. Listing a website here does not make its data usage free.</p>
+    </section>
+    <div id="tabs" aria-label="Tabs"></div>
+  </main>
+  <section id="addressbar" class="address-row">
+    <input id="address" type="text" placeholder="Enter a website address or search terms" autocomplete="off">
+    <button id="bookmark" title="Add to Favorites">★</button>
+    <button id="go">Go</button>
+    <select id="engine" title="Search engine"></select>
+    <button id="more" title="More options">⋮</button>
+  </section>
+  <footer id="bottombar" class="button-row">
+    <button id="setup">Setup</button><button id="tool">Tool</button><button id="downloads">Downloads</button><button id="save">Save</button><button id="muse">Muse</button><button id="newTab"><span>New</span><span>Tab</span></button><button id="favorites">Favorites</button><button id="ip">IP</button>
+  </footer>
+  <div id="panelBackdrop" class="hidden"><section id="panel" role="dialog" aria-modal="true"><div class="panel-head"><strong id="panelTitle">Panel</strong><button id="closePanel" aria-label="Close">×</button></div><div id="panelBody"></div></section></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="renderer.js"></script>
+</body></html>

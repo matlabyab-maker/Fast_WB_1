@@ -1,0 +1,9 @@
+{
+  "name": "fast-wb-1",
+  "version": "0.1.0",
+  "description": "Fast_WB_1 desktop-style browser project",
+  "main": "main.js",
+  "scripts": {"start": "electron .", "dist:win": "electron-builder --win portable", "dist:linux": "electron-builder --linux AppImage"},
+  "devDependencies": {"electron": "^35.0.0", "electron-builder": "^26.0.12"},
+  "build": {"appId": "com.fastwb.browser", "productName": "Fast_WB_1", "files": ["main.js", "preload.js", "index.html", "renderer.js", "style.css", "README.md"], "win": {"target": ["portable"]}, "linux": {"target": ["AppImage"]}}
+}
