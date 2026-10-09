@@ -1,26 +1,47 @@
 name: Build Fast_WB_1
+
 on:
   push:
     branches: [main, master]
   workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - os: windows-latest
             script: dist:win
+            artifact: Fast_WB_1-Windows
           - os: ubuntu-latest
             script: dist:linux
+            artifact: Fast_WB_1-Linux
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
-      - run: npm run ${{ matrix.script }}
-      - uses: actions/upload-artifact@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application without publishing
+        run: npm run ${{ matrix.script }} -- --publish never
+
+      - name: Upload build files
+        uses: actions/upload-artifact@v4
         with:
-          name: Fast_WB_1-${{ matrix.os }}
-          path: dist/*
+          name: ${{ matrix.artifact }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
